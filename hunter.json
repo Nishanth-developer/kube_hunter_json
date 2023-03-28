@@ -1,0 +1,65 @@
+{
+    "khv043": {
+        "vulnerability_name": "Cluster Health Disclosure",
+        "severity": "HIGH",
+        "issue_description": "The kubelet is leaking it\u2019s health information, which may contain sensitive information, via the ",
+        "remediation": "Disable ",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://github.com/kubernetes/kubernetes/blob/4a6935b31fcc4d1498c977d90387e02b6b93288f/pkg/kubelet/server/server.go",
+            "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/#options"
+        ]
+    },
+    "khv036": {
+        "vulnerability_name": "Anonymous Authentication",
+        "severity": "CRITICAL",
+        "issue_description": "The kubelet is configured to allow anonymous (unauthenticated) requests to it\u2019s HTTP api. This may expose certein information, and capabilities to an attacker with access to the kubelet API.",
+        "remediation": "Ensure kubelet is protected using ",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet-authentication-authorization/"
+        ]
+    },
+    "khv002": {
+        "vulnerability_name": "Kubernetes version disclosure",
+        "severity": "LOW",
+        "issue_description": "The fact that your infrastructure is using Kubernetes, and the specific version of Kubernetes used is publicly available, and could be used by an attacker to target your environment with known vulnerabilities in the specific version of Kubernetes you are using.\nThis information could have been obtained from the Kubernetes API ",
+        "remediation": "Disable ",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://github.com/kubernetes/kubernetes/blob/4a6935b31fcc4d1498c977d90387e02b6b93288f/pkg/kubelet/server/server.go",
+            "https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/#options"
+        ]
+    },
+    "khv053": {
+        "vulnerability_name": "AWS Metadata Exposure",
+        "severity": "HIGH",
+        "issue_description": "AWS EC2 proides an internal HTTP endpoint that exposes information from the cloud platform to workloads running in an instance. The endpoint is accessible to every workload running in the instance. An attacker that is able to execute a pod in the cluster may be able to query the metadata service and discover additional information about the environment.",
+        "remediation": "No remedy given!",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html",
+            "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html"
+        ]
+    },
+    "khv005": {
+        "vulnerability_name": "Access to Kubernetes API",
+        "severity": "HIGH",
+        "issue_description": "Kubernetes API was accessed with Pod Service Account or without Authentication (see report message for details).",
+        "remediation": "Secure access to your Kubernetes API.",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/"
+        ]
+    },
+    "khv050": {
+        "vulnerability_name": "Read access to Pod service account token",
+        "severity": "MEDIUM",
+        "issue_description": "Every Pod in Kubernetes is associated with a Service Account which by default has access to the Kubernetes API. This access is made available to Pods by an auto-generated token that is made available to the Pod by Kubernetes. An attacker with access to a Pod can read the token and access the Kubernetes API.",
+        "remediation": "It is recommended to explicitly specify a Service Account for all of your workloads (",
+        "remedy_links": "No remedy links given in website!",
+        "other_links": [
+            "https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/"
+        ]
+    }
+}
